@@ -5,7 +5,7 @@ Form Maker also combines Infinite Campus' extracts and Data Studio's exports int
 
 Spreadsheet #1 is used by my inventory management system. <br /> 
 
-Spreadsheet #2 is meant to convert Data studio's output from . . . <br />
+Spreadsheet #2 is shared with my curriculum coordinator and is meant to convert Data studio's output from . . . <br />
 **'School, DisplayName, UserName, Grade, Pass, First Name, Last Name, Alias'** 
 
 to <br />
