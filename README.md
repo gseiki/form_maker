@@ -1,18 +1,21 @@
 # form_maker
 Form Maker creates unique TRUF, SPVR, and CEP survey pdfs for each new student.  
 <br />
-Form Maker also combines HIDOE's Infinite Campus' extract and Data Studio's export into sharable Google Sheets that allows staff members to easily sort and group student information.  
-Spreadsheet #1 is used by Princess Nahienaena Elementary's inventory management system.  Spreadsheet #2 is meant to convert Data studio's output from . . . <br />
+Form Maker also combines HIDOE's Infinite Campus' extract and Data Studio's export into sharable Google Sheets that allows staff members to easily sort and group student information.  <br />
+
+Spreadsheet #1 is used by Princess Nahienaena Elementary's inventory management system. <br /> 
+
+Spreadsheet #2 is meant to convert Data studio's output from . . . <br />
 'School, DisplayName, UserName, Grade, Pass, First Name, Last Name, Alias' 
 
 to <br />
 
 'State ID, First Name, Last Name, Gmail Address, Gmail Password, Grade, Homeroom #, Teacher Name' <br />
 
-This makes it much easier to sort and share students' Google credentials with their teachers. Please adjust code to fit your needs.  <br />
+This makes it much easier to sort and share students' Google credentials with their teachers.  <br />
 
 ## Requirements
-If you woujld like to use this application with the least amount of modification, ensure that the following requirements are met . . . <br />
+This project was developed in a macOS environment using Python.  If you woujld like to use this application with the least amount of modification, ensure that the following requirements are met . . . <br />
 1.  Install: <br />
         Gspread, <br />
         Sengo, <br />
