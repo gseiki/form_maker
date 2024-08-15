@@ -1,7 +1,8 @@
 # form_maker
-Form Maker creates unique TRUF, SPVR, and CEP survey pdfs for each new student.  
-<br />
-Form Maker also combines HIDOE's Infinite Campus' extract and Data Studio's export into sharable Google Sheets that allows staff members to easily sort and group student information.  <br />
+Form Maker creates student specific TRUF, SPVR, and CEP survey pdfs with QR codes for easy management and tracking of school forms. Individual student forms output to their respective directories (TRUF, SPVR, and CEP) and named using 
+the convention 'room-studentID'.  Additionally, forms are sorted by classroom and merged into one pdf document for easy printing and distribution. Each time this applicaiton is ran, new students are identified and forms are automatically created.<br />
+
+Form Maker also combines Infinite Campus' extracts and Data Studio's exports into sharable Google Sheets that allows teachers members to easily sort and group student information.  <br />
 
 Spreadsheet #1 is used by Princess Nahienaena Elementary's inventory management system. <br /> 
 
