@@ -6,11 +6,11 @@ Form Maker also combines HIDOE's Infinite Campus' extract and Data Studio's expo
 Spreadsheet #1 is used by Princess Nahienaena Elementary's inventory management system. <br /> 
 
 Spreadsheet #2 is meant to convert Data studio's output from . . . <br />
-'School, DisplayName, UserName, Grade, Pass, First Name, Last Name, Alias' 
+**'School, DisplayName, UserName, Grade, Pass, First Name, Last Name, Alias'** 
 
-to <br />
+:to: <br />
 
-'State ID, First Name, Last Name, Gmail Address, Gmail Password, Grade, Homeroom #, Teacher Name' <br />
+**'State ID, First Name, Last Name, Gmail Address, Gmail Password, Grade, Homeroom #, Teacher Name'** <br />
 
 This makes it much easier to sort and share students' Google credentials with their teachers.  <br />
 
