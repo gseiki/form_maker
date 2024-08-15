@@ -11,14 +11,14 @@ script_name = os.path.basename(__file__)
 script_dir = os.path.dirname(__file__)
 module_dir = ("%s/modules" % (script_dir))
 creds_dir = ("%s/creds" % (script_dir))
-magick_path = ("/opt/homebrew/bin/convert")
 template_dir = ("%s/templates" % (script_dir))
 output_dir = ("%s/output" % (script_dir))
 tmp_dir = ("%s/tmp" % (script_dir))
 tmp_ic = ("%s/tmp_extract.csv" % (tmp_dir))
 
-### Variables You Need Change to match your project###
-json = '/path/to/google/sheet/json/file'
+### You need to change these variables to match your project ###
+magick_path = ("/Path/To/ImageMagick") 
+json = '/Name/of/Google/API/json/file' 
 scanner_spreadsheet_id = 'spreadsheet_#1_id'
 scanner_sheet_name = 'name_of_spreadsheet_#1_tab'
 roster_spreadsheet_id = 'spreadsheet_#2_id'
@@ -28,11 +28,9 @@ roster_sheet_name = 'name_of_spreadsheet_#2_tab'
 # AdHoc report, you have to reflect it here.  "ic_header" is derived from "ic_dob_header"
 # so the only difference between the two should be the "dob" field.
 # If you changed any of these headers, you'll also have to change the headers of old_student_df in the main.
-ic_dob_header = (
-    "State ID\tFirst Name\tLast Name\tGrade\tHomeroom #\tTeacher Name\tBirthdate")
+ic_dob_header = ("State ID\tFirst Name\tLast Name\tGrade\tHomeroom #\tTeacher Name\tBirthdate")
 ic_header = ("State ID\tFirst Name\tLast Name\tGrade\tHomeroom #\tTeacher Name")
-ds_header = (
-    "School,DisplayName,UserName,Grade,Pass,First Name,Last Name,Alias")
+ds_header = ("School,DisplayName,UserName,Grade,Pass,First Name,Last Name,Alias")
 
 # If you want to automat printing of forms, change boolean to True
 print_forms = False
@@ -41,7 +39,6 @@ print_forms = False
 ## If you followed the README requirements . . . ##
 ## you shouldn't have to change anythin below    ##
 ###################################################
-
 
 def main():
     # Check to see if user provided the necessary arguments to run the script.
@@ -168,18 +165,18 @@ def main():
                     magick = Magick()
                     magick.set_script_dir(script_dir)
                     magick.set_magick_path(magick_path)
-                    magick.make_trug_dir(output_dir)
+                    magick.make_truf_dir(output_dir)
                     magick.make_spvr_dir(output_dir)
                     magick.make_survey_dir(output_dir)
                     magick.set_template_dir(template_dir)
-                    magick.make_trug(new_students_df)
+                    magick.make_truf(new_students_df)
                     magick.make_spvr(new_students_df)
                     magick.make_survey(new_survey_df.astype(str))
-                    magick.combine_trug_pdfs()  # Combine all TRUG forms into one pdf
+                    magick.combine_truf_pdfs()  # Combine all truf forms into one pdf
                     magick.combine_spvr_pdfs()  # Combine all SPVR forms into one pdf
                     magick.combine_survey_pdfs()  # Combine all CEP survey forms into one pdf
                     if print_forms:
-                        magick.print_trug()
+                        magick.print_truf()
                         magick.print_spvr()
                         magick.print_survey()
                     google.export_df_to_sheet(

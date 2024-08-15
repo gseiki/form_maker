@@ -9,17 +9,17 @@ class Magick:
         self.magick_path = "magick_path"
         self.script_dir = "dir_path"
         self.template_dir = "dir_path"
-        self.trug_dir = "dir_path"
+        self.truf_dir = "dir_path"
         self.spvr_dir = "dir_path"
         self.survey_dir = "dir_path"
         self.png_path = ("image_path")
         self.jpg_path = ("image_path")
-        self.trug_path = ("file_path")
+        self.truf_path = ("file_path")
         self.spvr_front = ("file_path")
         self.spvr_back = ("file_path")
         self.survey_front = ("file_path")
         self.survey_back = ("file_path")
-        self.trug_result_path = ("file_path")
+        self.truf_result_path = ("file_path")
         self.spvr_result_path = ("file_path")
         self.survey_result_path = ("file_path")
 
@@ -31,14 +31,14 @@ class Magick:
         self.png_path = ("%s/qr.png" % (self.script_dir))
         self.jpg_path = ("%s/qr.jpg" % (self.script_dir))
 
-    def make_trug_dir(self, new_dir):
-        self.trug_dir = ("%s/trug-pdfs" % (new_dir))
-        trug_dir_exists = os.path.exists(self.trug_dir)
-        if trug_dir_exists:
-            subprocess.run(['rm', '-r', self.trug_dir])
-            subprocess.run(['mkdir', '-p', self.trug_dir])
+    def make_truf_dir(self, new_dir):
+        self.truf_dir = ("%s/truf-pdfs" % (new_dir))
+        truf_dir_exists = os.path.exists(self.truf_dir)
+        if truf_dir_exists:
+            subprocess.run(['rm', '-r', self.truf_dir])
+            subprocess.run(['mkdir', '-p', self.truf_dir])
         else:
-            subprocess.run(['mkdir', '-p', self.trug_dir])
+            subprocess.run(['mkdir', '-p', self.truf_dir])
 
     def make_spvr_dir(self, new_dir):
         self.spvr_dir = ("%s/spvr-pdfs" % (new_dir))
@@ -61,13 +61,13 @@ class Magick:
 
     def set_template_dir(self, new_dir):
         self.template_dir = new_dir
-        self.trug_path = ("%s/trug.jpg" % (self.template_dir))
+        self.truf_path = ("%s/truf.jpg" % (self.template_dir))
         self.spvr_front = ("%s/spvr_front.jpg" % (self.template_dir))
         self.spvr_back = ("%s/spvr_back.jpg" % (self.template_dir))
         self.survey_front = ("%s/survey_front.jpg" % (self.template_dir))
         self.survey_back = ("%s/survey_back.jpg" % (self.template_dir))
 
-    def make_trug(self, df_name):
+    def make_truf(self, df_name):
         for index, row in df_name.iterrows():
             qr = (row['State ID'])
             fName = (row['First Name'])
@@ -75,7 +75,7 @@ class Magick:
             room = (row['Homeroom #'])
             name_and_id = ("%s %s (%s)" % (fName, lName, qr))
             name = ("%s %s" % (fName, lName))
-            output_path = ("%s/%s_%s.pdf" % (self.trug_dir, room, qr))
+            output_path = ("%s/%s_%s.pdf" % (self.truf_dir, room, qr))
             qr_png = segno.make_qr(qr) # Make the qr code
             qr_png.save( # Write the qr code to file
                        "qr.png",
@@ -89,14 +89,14 @@ class Magick:
                        data_light="white", # Not all the modules in a qr code house the data that's encoded. Use "data_light" to change the color of the light data modules.
                        )
             subprocess.run([self.magick_path, self.png_path, self.jpg_path]) # Convert QR from jpg to png
-            subprocess.run([self.magick_path, self.trug_path, 
+            subprocess.run([self.magick_path, self.truf_path, 
                             "-font", "/Library/Fonts/Arial Unicode.ttf", "-fill", "blue", 
                             "-pointsize", "20", "-annotate", "+555+1225", "Princess Nahienaena Elementary", 
                             "-pointsize", "18", "-annotate", "+535+1360", name_and_id, 
                             "-pointsize", "26", "-annotate", "+50+50", name, 
                             "-annotate", "+50+85", room, 
                             self.jpg_path, "-geometry", "+1150+25", 
-                            "-composite", "-matte", output_path])
+                            "-composite", "-alpha", "Set", output_path])
             
 
     def make_spvr(self, df_name):
@@ -127,7 +127,7 @@ class Magick:
                             "-pointsize", "24", "-annotate", "+210+65", name, 
                             "-annotate", "+210+95", room, 
                             self.jpg_path, "-geometry", "+1120+45", 
-                            "-composite", "-matte", self.spvr_back, output_path])
+                            "-composite", "-alpha", "Set", self.spvr_back, output_path])
             
     def make_survey(self, df_name):
         for index, row in df_name.iterrows():
@@ -160,16 +160,16 @@ class Magick:
                             "-annotate", "+630+430", room, 
                             "-annotate", "+900+430", 
                             qr, self.jpg_path, "-geometry", "+1150+35", 
-                            "-composite", "-matte", self.survey_back, output_path])
+                            "-composite", "-alpha", "Set", self.survey_back, output_path])
 
-    def combine_trug_pdfs(self):
-        self.trug_result_path = ("%s/print_trug.pdf" % (self.trug_dir))
-        pdf_array = sorted(os.listdir(self.trug_dir))
+    def combine_truf_pdfs(self):
+        self.truf_result_path = ("%s/print_truf.pdf" % (self.truf_dir))
+        pdf_array = sorted(os.listdir(self.truf_dir))
         merger = PdfWriter()
         for pdf in pdf_array:
-            file = ("%s/%s" % (self.trug_dir, pdf))
+            file = ("%s/%s" % (self.truf_dir, pdf))
             merger.append(file)
-        merger.write(self.trug_result_path)
+        merger.write(self.truf_result_path)
         merger.close()
 
     def combine_spvr_pdfs(self):
@@ -192,8 +192,8 @@ class Magick:
         merger.write(self.survey_result_path)
         merger.close()
 
-    def print_trug(self):
-        subprocess.run(["lpr", "-o", "sides=one-sided", self.trug_result_path])
+    def print_truf(self):
+        subprocess.run(["lpr", "-o", "sides=one-sided", self.truf_result_path])
 
     def print_spvr(self):
         subprocess.run(["lpr", "-o", "sides=two-sided-long-edge", self.spvr_result_path])
