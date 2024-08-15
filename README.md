@@ -17,25 +17,25 @@ As you may have noticed, the Datastudio's export doesn't contain teacher/homeroo
 ## Requirements
 This project was developed in a macOS environment using Python.  If you woujld like to use this project with minimal modification, ensure that the following requirements are met . . . <br />
 1.  Install: <br />
-        *  Gspread,
-        *  ImageMagick,
-        *  Pypdf, 
-        *  Pandas, 
-        *  Sengo 
+        * Gspread,
+        * ImageMagick,
+        * Pypdf, 
+        * Pandas, 
+        * Sengo 
 
 2.  Configure you Google API: This project makes calls to a Google Workspace API. You can find information about setting up your Google API here . . . <br />
     https://developers.google.com/docs/api/quickstart/python <br />
 
 3.  In main.py . . . 
-        *  Configure your Google API by setting . . .
+        * Configure your Google API by setting . . .
               google.json file name (google.json file should go into the creds directory of this project), <br />
               spreadsheet #1 id, <br />
               spreadsheet #2 id, <br />
               spreadsheet #1 tab_name, <br />
               spreadsheet #2 tab_name <br />
 
-        *  Set the path of ImageMagick. 
-        *  Decide if you want to automate printing of forms.  If you, set the boolean value of print_forms to True.
+        * Set the path of ImageMagick. 
+        * Decide if you want to automate printing of forms.  If you, set the boolean value of print_forms to True.
 
 5.  Make sure template files (trug.jpg, spvr.jpg, cep.jpg) have a width of 1275 px, height of 1650 px, and a resolution of 150 pixel/inch.
     You can configure this in Preview by navigating to Tools > Adjust Size.  School year 2024-2025 template files are located in the templates directory, but must be updated as new form versions are released. <br />
