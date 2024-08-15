@@ -32,11 +32,13 @@ If you woujld like to use this application with the least amount of modification
 4.  Make sure template files (trug.jpg, spvr.jpg, cep.jpg) have a width of 1275 px, height of 1650 px, and a resolution of 150 pixel/inch.
     You can configure this in Preview by navigating to Tools > Adjust Size. <br />
 
-5.  Infinite Campus extract should be in the following format ("State ID\tFirst Name\tLast Name\tGrade\tHomeroom #\tTeacher Name\tBirthdate") <br />
+5.  Infinite Campus extract should be in the following format <br />
+    ("State ID\tFirst Name\tLast Name\tGrade\tHomeroom #\tTeacher Name\tBirthdate") <br />
 
-6.  DataStudio extract should be in the following format ("School,DisplayName,UserName,Grade,Pass,First Name,Last Name,Alias") <br />
+6.  DataStudio extract should be in the following format <br />
+    ("School,DisplayName,UserName,Grade,Pass,First Name,Last Name,Alias") <br />
 
 7.  If you want Roster Maker to automatically print your forms, you must uncomment the following lines in main.py . . . <br />
-        magick.print_trug() <br />
-        magick.print_spvr() <br />
-        magick.print_survey() <br />
+    magick.print_trug() <br />
+    magick.print_spvr() <br />
+    magick.print_survey() <br />
