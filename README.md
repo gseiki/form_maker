@@ -18,9 +18,10 @@ This makes it much easier to sort and share students' Google credentials with th
 This project was developed in a macOS environment using Python.  If you woujld like to use this application with the least amount of modification, ensure that the following requirements are met . . . <br />
 1.  Install: <br />
         Gspread, <br />
-        Sengo, <br />
+        ImageMagick, <br />
         Pypdf, <br />
-        Pandas <br />
+        Pandas, <br />
+        Sengo, <br />
 
 2.  Configure you Google API: This app makes calls to a Google Workspace API. You can find information about setting up your Google API here . . . <br />
     https://developers.google.com/docs/api/quickstart/python <br />
