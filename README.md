@@ -8,7 +8,7 @@ Spreadsheet #1 is used by Princess Nahienaena Elementary's inventory management 
 Spreadsheet #2 is meant to convert Data studio's output from . . . <br />
 **'School, DisplayName, UserName, Grade, Pass, First Name, Last Name, Alias'** 
 
-:-:to <br />
+<center>to</center> <br />
 
 **'State ID, First Name, Last Name, Gmail Address, Gmail Password, Grade, Homeroom #, Teacher Name'** <br />
 
