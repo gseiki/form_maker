@@ -28,15 +28,15 @@ This project was developed in a macOS environment using Python.  If you woujld l
 
 3.  In main.py . . . <br />
         Configure your Google API by setting . . . <br />
-            google.json file name (google.json file should go into the creds directory of this project), <br />
-            spreadsheet #1 id, <br />
-            spreadsheet #2 id, <br />
-            spreadsheet #1 tab_name, <br />
-            spreadsheet #2 tab_name <br /> 
+        google.json file name (google.json file should go into the creds directory of this project), <br />
+        spreadsheet #1 id, <br />
+        spreadsheet #2 id, <br />
+        spreadsheet #1 tab_name, <br />
+        spreadsheet #2 tab_name <br />
 
-        Set the path of ImageMagick. <br />
+4.  Set the path of ImageMagick. <br />
 
-        Decide if you want to automate printing of forms.  If you, set the boolean value of print_forms to True. <br />
+5.  Decide if you want to automate printing of forms.  If you do, set the boolean value of print_forms in main.py to True. <br />
 
 5.  Make sure template files (trug.jpg, spvr.jpg, cep.jpg) have a width of 1275 px, height of 1650 px, and a resolution of 150 pixel/inch.
     You can configure this in Preview by navigating to Tools > Adjust Size.  School year 2024-2025 template files are located in the templates directory, but must be updated as new form versions are released. <br />

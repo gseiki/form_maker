@@ -176,6 +176,7 @@ def main():
                     magick.combine_spvr_pdfs()  # Combine all SPVR forms into one pdf
                     magick.combine_survey_pdfs()  # Combine all CEP survey forms into one pdf
                     if print_forms:
+                        print("Printing  PDF forms . . . ")
                         magick.print_truf()
                         magick.print_spvr()
                         magick.print_survey()
