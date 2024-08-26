@@ -1,5 +1,5 @@
 # form_maker
-Form Maker creates student specific TRUF, SPVR, and CEP survey pdfs with QR codes for easy management and tracking of school forms.  Individual student forms output to their respective directories (TRUF, SPVR, and CEP) as PDFs and are named using the convention 'room-studentID'.  Additionally, individual student PDFs are grouped by type (TRUF, SPVR, and CEP) and sorted by classroom, then merged into print_truf.pdf, print_spvr.pdf, and print_survey.pdf documents for easy printing and distribution.  Each time this applicaiton is ran, new students are identified and forms are automatically created.  Printing of forms can also be automated if desired.  The print_spvr.pdf and print_cep.pdf documents will print double-sided, while print_truf.pdf will print single-sided.<br />
+Form Maker creates student specific TRUF, SPVR, and CEP survey pdfs with QR codes for easy management and tracking of school forms.  Individual student forms output to their respective directories (TRUF, SPVR, and CEP) as PDFs and are named using the convention 'room-studentID.pdf'.  Additionally, individual student PDFs are grouped by type (TRUF, SPVR, and CEP) and sorted by classroom, then merged into print_truf.pdf, print_spvr.pdf, and print_survey.pdf documents for easy printing and distribution.  Each time this applicaiton is ran, new students are identified and forms are automatically created.  Printing of forms can also be automated if desired.  The print_spvr.pdf and print_cep.pdf documents will print double-sided, while print_truf.pdf will print single-sided.<br />
 
 Form Maker also combines Infinite Campus' extracts and Data Studio's exports into sharable Google Sheets that allows teachers to easily sort and group student information.  <br />
 
@@ -13,6 +13,8 @@ to <br />
 **'State ID, First Name, Last Name, Gmail Address, Gmail Password, Grade, Homeroom #, Teacher Name'** <br />
 
 As you may have noticed, the Datastudio's export doesn't contain teacher/homeroom assignments.  This is an issue when teachers request their students Google credentials.  By consolidating the Datastudio export with Infinite Campus extract, students' Google credentials can be sorted by grade and homeroom making it much easier to share students' Google usernames and passwords with teachers.  <br />
+
+Although Form Maker expects to update two different Google sheets by default, you can change this action to fit your needs by tweaking main.py. 
 
 ## Requirements
 This project was developed in a macOS environment using Python.  If you woujld like to use this project with minimal modification, ensure that the following requirements are met . . . <br />
